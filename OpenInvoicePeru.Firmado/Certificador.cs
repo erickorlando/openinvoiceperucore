@@ -1,4 +1,6 @@
-﻿using System;
+﻿using OpenInvoicePeru.Comun.Constantes;
+using OpenInvoicePeru.Comun.Dto.Intercambio;
+using System;
 using System.IO;
 using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
@@ -6,8 +8,6 @@ using System.Security.Cryptography.Xml;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
-using OpenInvoicePeru.Comun.Constantes;
-using OpenInvoicePeru.Comun.Dto.Intercambio;
 
 namespace OpenInvoicePeru.Firmado
 {
@@ -20,10 +20,9 @@ namespace OpenInvoicePeru.Firmado
 
                 var response = new FirmadoResponse();
 
-                var certificate = new X509Certificate2();
-                certificate.Import(Convert.FromBase64String(request.CertificadoDigital),
-                    request.PasswordCertificado, X509KeyStorageFlags.MachineKeySet);
-
+                var certificate = new X509Certificate2(
+                    new ReadOnlySpan<byte>(Convert.FromBase64String(request.CertificadoDigital)), new ReadOnlySpan<char>(request.PasswordCertificado.ToCharArray()));
+                
                 var xmlDoc = new XmlDocument();
 
                 string resultado;
@@ -36,8 +35,6 @@ namespace OpenInvoicePeru.Firmado
                 {
                     xmlDoc.PreserveWhitespace = true;
                     xmlDoc.Load(documento);
-
-                    //var indiceNodo = request.UnSoloNodoExtension ? 0 : 1;
 
                     var nodoExtension = xmlDoc.GetElementsByTagName("ExtensionContent", EspacioNombres.ext).Item(0);
                     if (nodoExtension == null)

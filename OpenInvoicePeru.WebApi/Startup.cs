@@ -1,16 +1,13 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using OpenInvoicePeru.Firmado;
+using OpenInvoicePeru.Servicio;
+using OpenInvoicePeru.Servicio.Soap;
+using OpenInvoicePeru.Xml;
 
 namespace OpenInvoicePeru.WebApi
 {
@@ -26,11 +23,17 @@ namespace OpenInvoicePeru.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<IDocumentoXml, FacturaXml>();
+            services.AddTransient<ICertificador, Certificador>();
+            services.AddTransient<ISerializador, Serializador>();
+            
+            services.AddScoped<IServicioSunatDocumentos, ServicioSunatDocumentos>();
+            services.AddScoped<IServicioSunatConsultas, ServicioSunatConsultas>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "OpenInvoicePeru.WebApi", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "OpenInvoicePeru API REST NET 5", Version = "v1" });
             });
         }
 
