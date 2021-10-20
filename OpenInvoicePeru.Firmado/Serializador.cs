@@ -1,4 +1,5 @@
-﻿using OpenInvoicePeru.Comun.Constantes;
+﻿using OpenInvoicePeru.Comun;
+using OpenInvoicePeru.Comun.Constantes;
 using OpenInvoicePeru.Comun.Dto.Intercambio;
 using System;
 using System.IO;
@@ -19,7 +20,7 @@ namespace OpenInvoicePeru.Firmado
         /// <typeparam name="T">Clase a serializar</typeparam>
         /// <param name="objectToSerialize">Instancia de la Clase</param>
         /// <returns>Devuelve una cadena Base64 del archivo XML</returns>
-        async Task<string> ISerializador.GenerarXml<T>(T objectToSerialize)
+        public async Task<string> GenerarXml<T>(T objectToSerialize) where T : IEstructuraXml
         {
             var task = Task.Factory.StartNew(() =>
             {
@@ -45,7 +46,7 @@ namespace OpenInvoicePeru.Firmado
         /// <param name="tramaXml">Cadena Base64 con el contenido del XML</param>
         /// <param name="nombreArchivo">Nombre del archivo ZIP</param>
         /// <returns>Devuelve Cadena Base64 del archizo ZIP</returns>
-        async Task<string> ISerializador.GenerarZip(string tramaXml, string nombreArchivo)
+        public async Task<string> GenerarZip(string tramaXml, string nombreArchivo)
         {
             var task = Task.Factory.StartNew(() =>
             {

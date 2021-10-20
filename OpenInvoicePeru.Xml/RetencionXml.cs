@@ -10,7 +10,7 @@ namespace OpenInvoicePeru.Xml
 {
     public class RetencionXml : IDocumentoXml
     {
-        IEstructuraXml IDocumentoXml.Generar(IDocumentoElectronico request)
+        public IEstructuraXml Generar(IDocumentoElectronico request)
         {
             var documento = (DocumentoRetencion)request;
             var retention = new Retention

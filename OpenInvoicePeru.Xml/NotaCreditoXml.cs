@@ -12,7 +12,7 @@ namespace OpenInvoicePeru.Xml
 {
     public class NotaCreditoXml : IDocumentoXml
     {
-        IEstructuraXml IDocumentoXml.Generar(IDocumentoElectronico request)
+        public IEstructuraXml Generar(IDocumentoElectronico request)
         {
             var documento = (DocumentoElectronico)request;
             documento.MontoEnLetras = Conversion.Enletras(documento.TotalVenta);

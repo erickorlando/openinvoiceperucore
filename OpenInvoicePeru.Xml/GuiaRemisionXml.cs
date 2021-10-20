@@ -12,7 +12,7 @@ namespace OpenInvoicePeru.Xml
 {
     public class GuiaRemisionXml : IDocumentoXml
     {
-        IEstructuraXml IDocumentoXml.Generar(IDocumentoElectronico request)
+        public IEstructuraXml Generar(IDocumentoElectronico request)
         {
             var documento = (GuiaRemision)request;
             var despatchAdvice = new DespatchAdvice

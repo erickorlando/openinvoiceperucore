@@ -10,7 +10,7 @@ namespace OpenInvoicePeru.Xml
 {
     public class PercepcionXml : IDocumentoXml
     {
-        IEstructuraXml IDocumentoXml.Generar(IDocumentoElectronico request)
+        public IEstructuraXml Generar(IDocumentoElectronico request)
         {
             var documento = (DocumentoPercepcion)request;
             var perception = new Perception

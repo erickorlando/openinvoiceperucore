@@ -11,7 +11,7 @@ namespace OpenInvoicePeru.Xml
 {
     public class ComunicacionBajaXml : IDocumentoXml
     {
-        IEstructuraXml IDocumentoXml.Generar(IDocumentoElectronico request)
+        public IEstructuraXml Generar(IDocumentoElectronico request)
         {
             var documento = (ComunicacionBaja)request;
             var voidedDocument = new VoidedDocuments
