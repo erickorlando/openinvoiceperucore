@@ -1,7 +1,9 @@
-﻿namespace OpenInvoicePeru.Servicio
+﻿using System.Threading.Tasks;
+
+namespace OpenInvoicePeru.Servicio
 {
     public interface IServicioSunatConsultas : IServicioSunat
     {
-        RespuestaSincrono ConsultarConstanciaDeRecepcion(DatosDocumento request);
+        Task<RespuestaSincrono> ConsultarConstanciaDeRecepcion(DatosDocumento request);
     }
 }

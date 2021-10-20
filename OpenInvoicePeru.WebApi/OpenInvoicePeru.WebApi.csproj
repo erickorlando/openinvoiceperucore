@@ -6,6 +6,18 @@
 
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.2.1" />
+    <PackageReference Include="ZXing.Net" Version="0.16.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OpenInvoicePeru.Comun.Dto\OpenInvoicePeru.Comun.Dto.csproj" />
+    <ProjectReference Include="..\OpenInvoicePeru.Comun\OpenInvoicePeru.Comun.csproj" />
+    <ProjectReference Include="..\OpenInvoicePeru.Estructuras\OpenInvoicePeru.Estructuras.csproj" />
+    <ProjectReference Include="..\OpenInvoicePeru.Firmado\OpenInvoicePeru.Firmado.csproj" />
+    <ProjectReference Include="..\OpenInvoicePeru.Servicio.Soap\OpenInvoicePeru.Servicio.Soap.csproj" />
+    <ProjectReference Include="..\OpenInvoicePeru.Servicio\OpenInvoicePeru.Servicio.csproj" />
+    <ProjectReference Include="..\OpenInvoicePeru.Xml\OpenInvoicePeru.Xml.csproj" />
   </ItemGroup>
 
 </Project>

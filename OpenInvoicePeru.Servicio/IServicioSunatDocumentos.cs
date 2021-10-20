@@ -1,9 +1,11 @@
-﻿namespace OpenInvoicePeru.Servicio
+﻿using System.Threading.Tasks;
+
+namespace OpenInvoicePeru.Servicio
 {
     public interface IServicioSunatDocumentos : IServicioSunat
     {
-        RespuestaSincrono EnviarDocumento(DocumentoSunat request);
-        RespuestaAsincrono EnviarResumen(DocumentoSunat request);
-        RespuestaSincrono ConsultarTicket(string numeroTicket);
+        Task<RespuestaSincrono> EnviarDocumento(DocumentoSunat request);
+        Task<RespuestaAsincrono> EnviarResumen(DocumentoSunat request);
+        Task<RespuestaSincrono> ConsultarTicket(string numeroTicket);
     }
 }
