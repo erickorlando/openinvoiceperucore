@@ -7,12 +7,13 @@ using Microsoft.OpenApi.Models;
 using OpenInvoicePeru.Firmado;
 using OpenInvoicePeru.Servicio;
 using OpenInvoicePeru.Servicio.Soap;
-using OpenInvoicePeru.Xml;
 
 namespace OpenInvoicePeru.WebApi
 {
     public class Startup
     {
+        private const string CorsConfiguration = "OpenInvoicePeru";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -30,6 +31,16 @@ namespace OpenInvoicePeru.WebApi
             services.AddScoped<IServicioSunatDocumentos, ServicioSunatDocumentos>();
             services.AddScoped<IServicioSunatConsultas, ServicioSunatConsultas>();
 
+            services.AddCors(setup =>
+            {
+                setup.AddPolicy(CorsConfiguration, builder =>
+                {
+                    builder.AllowAnyOrigin()
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
+                });
+            });
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -46,12 +57,19 @@ namespace OpenInvoicePeru.WebApi
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "OpenInvoicePeru.WebApi v1"));
             }
+            else
+            {
+                app.UseSwagger();
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("../swagger/v1/swagger.json", "OpenInvoicePeru.WebApi v1"));
+            }
 
             app.UseHttpsRedirection();
 
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCors(CorsConfiguration);
 
             app.UseEndpoints(endpoints =>
             {
