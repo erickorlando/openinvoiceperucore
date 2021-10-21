@@ -1,10 +1,9 @@
 ![](openinvoiceperulogo.PNG)
-# OpenInvoicePeru v3.0 #
-Esta es una versión gratuita de OpenInvoicePeru construido con C#, haciendo sencilla la Facturación Electrónica de SUNAT, este proyecto está orientado al desarrollador.
+# OpenInvoicePeru v4.0 #
+OpenInvoicePeru es un API REST multiplataforma construido con C#, haciendo sencilla la Facturación Electrónica de SUNAT, este proyecto está orientado al desarrollador.
 Permite la generacion de XML, empaquetado, envío y recepción de documentos electrónicos a través de una API REST.
 
-[![Build status](https://frameworkperu.visualstudio.com/OpenInvoicePeruUBL21/_apis/build/status/OpenInvoicePeruUBL21-WebAPI-CI)](https://frameworkperu.visualstudio.com/OpenInvoicePeruUBL21/_build/latest?definitionId=6)
-Si encuentra algún bug por favor reportarlo a la zona de [Issues](https://github.com/erickorlando/openinvoiceperu/issues).
+Si encuentra algún bug por favor reportarlo a la zona de [Issues](https://github.com/erickorlando/openinvoiceperucore/issues).
 
 Para consultar las novedades y cambios del proyecto revise el [Control de Cambios](CHANGELOG.md)
 
@@ -25,17 +24,14 @@ Para consultar las novedades y cambios del proyecto revise el [Control de Cambio
 - Envío de Resumen Diario y Comunicación de Baja.
 - Desempaquetado y Lectura del contenido del CDR de SUNAT.
 - Consulta de Tickets de los Resúmenes y Bajas.
-- API REST bajo ASP.NET Web API 2.
 
 ### Cliente API REST de Ejemplo ###
 - Ejemplos en C# para el consumo de la API REST con PostSharp.
 
 ## Consideraciones ##
-- El proyecto se ha desarrollado con VS2019, usando como base el .NET Framework 4.7.1.
+- El proyecto se ha desarrollado con VS2019 Version 16.11.4, usando como base .NET 5.
 - Se recomienda usar encarecidamente VS2019 o superior, la edición [Community Edition](https://www.visualstudio.com/downloads/download-visual-studio-vs), es gratis y mucho mejor que sus predecesores.
 Puede usar la versión Professional o Enterprise si lo desea.
-
-- Para poder ejecutar correctamente el proyecto **debe iniciar Visual Studio como Administrador** y tener instalado IIS 10.0 o posterior.
 
 ## Descargo de Responsabilidad ##
 
@@ -53,6 +49,6 @@ Si tiene errores con SUNAT fíjese en el código devuelto:
 
 Si tiene mas dudas con SUNAT comuníquese con ellos al [+51 1 3150730](tel:+5113150730).
 
-## Asesoría y Soporte ##
+## Aportes de la Comunidad ##
 
-Este proyecto no cuenta con soporte, por ello el código es libre para su revisión, reproducción total o parcial sin pago de regalías ni tampoco derecho a reclamos hacia el creador.
+Si consideras que este proyecto vale la pena, puedes convertirte en sponsor o aportar código haciendo un fork y posteriormente enviando tus Pull Request, todo aporte como siempre es bienvenido.

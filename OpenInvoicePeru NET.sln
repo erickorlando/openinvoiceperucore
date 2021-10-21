@@ -3,21 +3,37 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31727.386
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenInvoicePeru.WebApi", "OpenInvoicePeru.WebApi\OpenInvoicePeru.WebApi.csproj", "{34A073C8-211C-45FC-BA63-A319BF2FA113}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenInvoicePeru.WebApi", "OpenInvoicePeru.WebApi\OpenInvoicePeru.WebApi.csproj", "{34A073C8-211C-45FC-BA63-A319BF2FA113}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenInvoicePeru.Comun.Dto", "OpenInvoicePeru.Comun.Dto\OpenInvoicePeru.Comun.Dto.csproj", "{7A3014D9-90E8-4573-A563-F2B6DDF61F93}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenInvoicePeru.Comun.Dto", "OpenInvoicePeru.Comun.Dto\OpenInvoicePeru.Comun.Dto.csproj", "{7A3014D9-90E8-4573-A563-F2B6DDF61F93}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenInvoicePeru.Comun", "OpenInvoicePeru.Comun\OpenInvoicePeru.Comun.csproj", "{FEF7F704-C301-4967-A92B-28A7C4F37A76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenInvoicePeru.Comun", "OpenInvoicePeru.Comun\OpenInvoicePeru.Comun.csproj", "{FEF7F704-C301-4967-A92B-28A7C4F37A76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenInvoicePeru.Servicio", "OpenInvoicePeru.Servicio\OpenInvoicePeru.Servicio.csproj", "{B42C3A7C-9C77-426E-8A9B-CF3689F17546}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenInvoicePeru.Servicio", "OpenInvoicePeru.Servicio\OpenInvoicePeru.Servicio.csproj", "{B42C3A7C-9C77-426E-8A9B-CF3689F17546}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenInvoicePeru.Servicio.Soap", "OpenInvoicePeru.Servicio.Soap\OpenInvoicePeru.Servicio.Soap.csproj", "{3A65016D-8874-4906-BD48-85DC5543C7A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenInvoicePeru.Servicio.Soap", "OpenInvoicePeru.Servicio.Soap\OpenInvoicePeru.Servicio.Soap.csproj", "{3A65016D-8874-4906-BD48-85DC5543C7A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenInvoicePeru.Estructuras", "OpenInvoicePeru.Estructuras\OpenInvoicePeru.Estructuras.csproj", "{9DC04F01-A61E-464C-A26F-BDE57AF8CE8B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenInvoicePeru.Estructuras", "OpenInvoicePeru.Estructuras\OpenInvoicePeru.Estructuras.csproj", "{9DC04F01-A61E-464C-A26F-BDE57AF8CE8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenInvoicePeru.Firmado", "OpenInvoicePeru.Firmado\OpenInvoicePeru.Firmado.csproj", "{5D47A153-ED11-401E-BD3D-84BCBAFFB463}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenInvoicePeru.Firmado", "OpenInvoicePeru.Firmado\OpenInvoicePeru.Firmado.csproj", "{5D47A153-ED11-401E-BD3D-84BCBAFFB463}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenInvoicePeru.Xml", "OpenInvoicePeru.Xml\OpenInvoicePeru.Xml.csproj", "{921030A2-D33D-4CC7-8978-B608CE079CAB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenInvoicePeru.Xml", "OpenInvoicePeru.Xml\OpenInvoicePeru.Xml.csproj", "{921030A2-D33D-4CC7-8978-B608CE079CAB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00. Miscelanea", "00. Miscelanea", "{DAF8995E-30ED-4939-B7C9-67340CB8EA51}"
+	ProjectSection(SolutionItems) = preProject
+		CHANGELOG.md = CHANGELOG.md
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01. Comunes", "01. Comunes", "{02B22AA5-4E17-45A0-A18E-AF10667FB1CB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02. DTO", "02. DTO", "{FEB63C67-5FD9-4039-BF35-E198820D73F0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03. Estructuras Sunat", "03. Estructuras Sunat", "{955CA0A3-9877-49A4-A5BD-58FEF63DEFE6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04. Servicios Externos", "04. Servicios Externos", "{C91DFF3E-4975-4A1D-AB5F-A6E711F71D34}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05. API REST", "05. API REST", "{ADC127A7-DF98-4616-8EA6-D5D5C7FEEA01}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -60,6 +76,16 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{34A073C8-211C-45FC-BA63-A319BF2FA113} = {ADC127A7-DF98-4616-8EA6-D5D5C7FEEA01}
+		{7A3014D9-90E8-4573-A563-F2B6DDF61F93} = {FEB63C67-5FD9-4039-BF35-E198820D73F0}
+		{FEF7F704-C301-4967-A92B-28A7C4F37A76} = {02B22AA5-4E17-45A0-A18E-AF10667FB1CB}
+		{B42C3A7C-9C77-426E-8A9B-CF3689F17546} = {C91DFF3E-4975-4A1D-AB5F-A6E711F71D34}
+		{3A65016D-8874-4906-BD48-85DC5543C7A0} = {C91DFF3E-4975-4A1D-AB5F-A6E711F71D34}
+		{9DC04F01-A61E-464C-A26F-BDE57AF8CE8B} = {955CA0A3-9877-49A4-A5BD-58FEF63DEFE6}
+		{5D47A153-ED11-401E-BD3D-84BCBAFFB463} = {02B22AA5-4E17-45A0-A18E-AF10667FB1CB}
+		{921030A2-D33D-4CC7-8978-B608CE079CAB} = {955CA0A3-9877-49A4-A5BD-58FEF63DEFE6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {355574D6-8D07-4645-96B6-7E00F97B8D1B}
