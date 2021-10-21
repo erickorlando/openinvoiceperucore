@@ -25,6 +25,7 @@ namespace OpenInvoicePeru.WebApi
         {
             services.AddTransient<ICertificador, Certificador>();
             services.AddTransient<ISerializador, Serializador>();
+            services.AddTransient<IValidezComprobanteHelper, ValidezComprobanteHelper>();
             
             services.AddScoped<IServicioSunatDocumentos, ServicioSunatDocumentos>();
             services.AddScoped<IServicioSunatConsultas, ServicioSunatConsultas>();
