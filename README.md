@@ -1,4 +1,4 @@
-![](openinvoiceperulogo.PNG)
+![](openinvoiceperulogo.png)
 # OpenInvoicePeru v4.0 #
 OpenInvoicePeru es un API REST multiplataforma construido con C#, haciendo sencilla la Facturación Electrónica de SUNAT, este proyecto está orientado al desarrollador.
 Permite la generacion de XML, empaquetado, envío y recepción de documentos electrónicos a través de una API REST.
