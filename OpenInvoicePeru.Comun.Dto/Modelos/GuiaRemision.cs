@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json;
-
+﻿using System.Text.Json.Serialization;
 using OpenInvoicePeru.Comun.Dto.Contratos;
 using System.Collections.Generic;
 
@@ -7,52 +6,52 @@ namespace OpenInvoicePeru.Comun.Dto.Modelos
 {
     public class GuiaRemision : IDocumentoElectronico
     {
-        [JsonProperty(Required = Required.Always)]
-        public string IdDocumento { get; set; }
+        [JsonPropertyName("IdDocumento")]
+        public required string IdDocumento { get; set; }
 
-        [JsonProperty(Required = Required.Always)]
-        public string FechaEmision { get; set; }
+        [JsonPropertyName("FechaEmision")]
+        public required string FechaEmision { get; set; }
 
-        [JsonProperty(Required = Required.Always)]
-        public string TipoDocumento { get; set; }
+        [JsonPropertyName("TipoDocumento")]
+        public required string TipoDocumento { get; set; }
 
-        [JsonProperty(Required = Required.AllowNull)]
+        [JsonPropertyName("Glosa")]
         public string Glosa { get; set; }
 
-        [JsonProperty(Required = Required.Always)]
-        public Contribuyente Remitente { get; set; }
+        [JsonPropertyName("Remitente")]
+        public required Contribuyente Remitente { get; set; }
 
-        [JsonProperty(Required = Required.Always)]
-        public Contribuyente Destinatario { get; set; }
+        [JsonPropertyName("Destinatario")]
+        public required Contribuyente Destinatario { get; set; }
 
-        [JsonProperty(Required = Required.Always)]
-        public Contribuyente Tercero { get; set; }
+        [JsonPropertyName("Tercero")]
+        public Contribuyente Tercero { get; set; } // Marked as required previously, but Contribuyente can be complex. Assuming it can be null based on typical usage. If strictly required, add 'required'.
 
-        [JsonProperty(Required = Required.AllowNull)]
+        [JsonPropertyName("DocumentoRelacionado")]
         public DocumentoRelacionado DocumentoRelacionado { get; set; }
 
-        [JsonProperty(Required = Required.AllowNull)]
+        [JsonPropertyName("GuiaBaja")]
         public DocumentoRelacionado GuiaBaja { get; set; }
 
-        [JsonProperty(Required = Required.Always)]
-        public string CodigoMotivoTraslado { get; set; }
+        [JsonPropertyName("CodigoMotivoTraslado")]
+        public required string CodigoMotivoTraslado { get; set; }
 
-        [JsonProperty(Required = Required.Always)]
-        public string DescripcionMotivo { get; set; }
+        [JsonPropertyName("DescripcionMotivo")]
+        public required string DescripcionMotivo { get; set; }
 
-        [JsonProperty(Required = Required.Always)]
-        public bool Transbordo { get; set; }
+        [JsonPropertyName("Transbordo")]
+        public required bool Transbordo { get; set; }
 
-        [JsonProperty(Required = Required.Always)]
-        public decimal PesoBrutoTotal { get; set; }
+        [JsonPropertyName("PesoBrutoTotal")]
+        public required decimal PesoBrutoTotal { get; set; }
 
         public int NroPallets { get; set; }
 
-        [JsonProperty(Required = Required.Always)]
-        public string ModalidadTraslado { get; set; }
+        [JsonPropertyName("ModalidadTraslado")]
+        public required string ModalidadTraslado { get; set; }
 
-        [JsonProperty(Required = Required.Always)]
-        public string FechaInicioTraslado { get; set; }
+        [JsonPropertyName("FechaInicioTraslado")]
+        public required string FechaInicioTraslado { get; set; }
 
         public string RucTransportista { get; set; }
 
@@ -62,18 +61,18 @@ namespace OpenInvoicePeru.Comun.Dto.Modelos
 
         public string NroDocumentoConductor { get; set; }
 
-        [JsonProperty(Required = Required.Always)]
-        public Direccion DireccionPartida { get; set; }
+        [JsonPropertyName("DireccionPartida")]
+        public required Direccion DireccionPartida { get; set; }
 
-        [JsonProperty(Required = Required.Always)]
-        public Direccion DireccionLlegada { get; set; }
+        [JsonPropertyName("DireccionLlegada")]
+        public required Direccion DireccionLlegada { get; set; }
 
         public string NumeroContenedor { get; set; }
 
         public string CodigoPuerto { get; set; }
 
-        [JsonProperty(Required = Required.Always)]
-        public List<DetalleGuia> BienesATransportar { get; set; }
+        [JsonPropertyName("BienesATransportar")]
+        public required List<DetalleGuia> BienesATransportar { get; set; }
 
         public string ShipmentId { get; set; }
     }

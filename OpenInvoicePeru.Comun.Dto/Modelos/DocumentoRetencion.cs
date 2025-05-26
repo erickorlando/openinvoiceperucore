@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json;
-
+﻿using System.Text.Json.Serialization;
 using OpenInvoicePeru.Comun.Dto.Contratos;
 using System.Collections.Generic;
 
@@ -7,19 +6,19 @@ namespace OpenInvoicePeru.Comun.Dto.Modelos
 {
     public class DocumentoRetencion : DocumentoSunatBase, IDocumentoElectronico
     {
-        [JsonProperty(Order = 7, Required = Required.Always)]
-        public string RegimenRetencion { get; set; }
+        [JsonPropertyOrder(7)]
+        public required string RegimenRetencion { get; set; }
 
-        [JsonProperty(Order = 8, Required = Required.Always)]
-        public decimal TasaRetencion { get; set; }
+        [JsonPropertyOrder(8)]
+        public required decimal TasaRetencion { get; set; }
 
-        [JsonProperty(Order = 9, Required = Required.Always)]
-        public decimal ImporteTotalRetenido { get; set; }
+        [JsonPropertyOrder(9)]
+        public required decimal ImporteTotalRetenido { get; set; }
 
-        [JsonProperty(Order = 10, Required = Required.Always)]
-        public decimal ImporteTotalPagado { get; set; }
+        [JsonPropertyOrder(10)]
+        public required decimal ImporteTotalPagado { get; set; }
 
-        [JsonProperty(Order = 11, Required = Required.Always)]
-        public List<ItemRetencion> DocumentosRelacionados { get; set; }
+        [JsonPropertyOrder(11)]
+        public required List<ItemRetencion> DocumentosRelacionados { get; set; }
     }
 }

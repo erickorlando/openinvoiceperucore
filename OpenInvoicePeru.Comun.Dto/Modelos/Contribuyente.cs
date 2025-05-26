@@ -1,20 +1,20 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace OpenInvoicePeru.Comun.Dto.Modelos
 {
     public class Contribuyente
     {
 
-        [JsonProperty(Order = 1, Required = Required.Always)]
-        public string NroDocumento { get; set; }
+        [JsonPropertyOrder(1)]
+        public required string NroDocumento { get; set; }
 
-        [JsonProperty(Order = 2, Required = Required.Always)]
-        public string TipoDocumento { get; set; }
+        [JsonPropertyOrder(2)]
+        public required string TipoDocumento { get; set; }
 
-        [JsonProperty(Order = 3, Required = Required.Always)]
-        public string NombreLegal { get; set; }
+        [JsonPropertyOrder(3)]
+        public required string NombreLegal { get; set; }
 
-        [JsonProperty(Order = 4)]
+        [JsonPropertyOrder(4)]
         public string NombreComercial { get; set; }
 
     }

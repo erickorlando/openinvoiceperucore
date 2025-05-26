@@ -1,41 +1,41 @@
 ﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace OpenInvoicePeru.Comun.Dto.Modelos
 {
     public class DetalleDocumento
     {
-        [JsonProperty(Required = Required.Always)]
-        public int Id { get; set; }
+        [JsonPropertyName("Id")]
+        public int Id { get; set; } // Initialized in constructor
 
-        [JsonProperty(Required = Required.Always)]
+        [JsonPropertyName("Cantidad")]
         public decimal Cantidad { get; set; }
 
-        [JsonProperty(Required = Required.Always)]
-        public string UnidadMedida { get; set; }
+        [JsonPropertyName("UnidadMedida")]
+        public string UnidadMedida { get; set; } // Initialized in constructor
 
-        [JsonProperty(Required = Required.Always)]
+        [JsonPropertyName("CodigoItem")]
         public string CodigoItem { get; set; }
 
-        [JsonProperty(Required = Required.Always)]
+        [JsonPropertyName("Descripcion")]
         public string Descripcion { get; set; }
 
-        [JsonProperty(Required = Required.Always)]
+        [JsonPropertyName("PrecioUnitario")]
         public decimal PrecioUnitario { get; set; }
 
-        [JsonProperty(Required = Required.Always)]
+        [JsonPropertyName("PrecioReferencial")]
         public decimal PrecioReferencial { get; set; }
 
-        [JsonProperty(Required = Required.Always)]
-        public string TipoPrecio { get; set; }
+        [JsonPropertyName("TipoPrecio")]
+        public string TipoPrecio { get; set; } // Initialized in constructor
 
-        [JsonProperty(Required = Required.Always)]
-        public string TipoImpuesto { get; set; }
+        [JsonPropertyName("TipoImpuesto")]
+        public string TipoImpuesto { get; set; } // Initialized in constructor
 
-        [JsonProperty(Required = Required.Always)]
+        [JsonPropertyName("Impuesto")]
         public decimal Impuesto { get; set; }
 
-        [JsonProperty(Required = Required.AllowNull)]
+        [JsonPropertyName("BaseImponible")]
         public decimal? BaseImponible { get; set; }
 
         public decimal ImpuestoSelectivo { get; set; }
@@ -52,10 +52,10 @@ namespace OpenInvoicePeru.Comun.Dto.Modelos
 
         public string CodigoProductoSunat { get; set; }
 
-        [JsonProperty(Required = Required.Always)]
+        [JsonPropertyName("TotalVenta")]
         public decimal TotalVenta { get; set; }
 
-        public List<DatoAdicional> DatosAdicionales { get; set; }
+        public List<DatoAdicional> DatosAdicionales { get; set; } // Initialized in constructor
         public string UbigeoOrigen { get; set; }
         public string DireccionOrigen { get; set; }
         public string UbigeoDestino { get; set; }
@@ -70,7 +70,7 @@ namespace OpenInvoicePeru.Comun.Dto.Modelos
         public decimal ValorReferencialTm { get; set; }
         public decimal ValorPreliminarReferencial { get; set; }
         public bool ViajeConRetorno { get; set; }
-        public int Referencia { get; set; }
+        public int Referencia { get; set; } // Initialized in constructor
 
         public DetalleDocumento()
         {

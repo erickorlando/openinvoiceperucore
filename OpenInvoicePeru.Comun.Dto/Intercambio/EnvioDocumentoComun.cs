@@ -1,25 +1,25 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace OpenInvoicePeru.Comun.Dto.Intercambio
 {
     public abstract class EnvioDocumentoComun
     {
-        [JsonProperty(Required = Required.Always)]
+        [JsonPropertyName("Ruc")]
         public string Ruc { get; set; }
 
-        [JsonProperty(Required = Required.Always)]
+        [JsonPropertyName("UsuarioSol")]
         public string UsuarioSol { get; set; }
 
-        [JsonProperty(Required = Required.Always)]
+        [JsonPropertyName("ClaveSol")]
         public string ClaveSol { get; set; }
 
-        [JsonProperty(Required = Required.Always)]
+        [JsonPropertyName("IdDocumento")]
         public string IdDocumento { get; set; }
 
-        [JsonProperty(Required = Required.Always)]
+        [JsonPropertyName("TipoDocumento")]
         public string TipoDocumento { get; set; }
 
-        [JsonProperty(Required = Required.Always)]
+        [JsonPropertyName("EndPointUrl")]
         public string EndPointUrl { get; set; }
     }
 }

@@ -1,13 +1,13 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace OpenInvoicePeru.Comun.Dto.Modelos
 {
     public class Direccion
     {
-        [JsonProperty(Required = Required.Always)]
-        public string Ubigeo { get; set; }
+        [JsonPropertyName("Ubigeo")]
+        public required string Ubigeo { get; set; }
 
-        [JsonProperty(Required = Required.Always)]
-        public string DireccionCompleta { get; set; }
+        [JsonPropertyName("DireccionCompleta")]
+        public required string DireccionCompleta { get; set; }
     }
 }

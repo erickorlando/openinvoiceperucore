@@ -1,25 +1,25 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace OpenInvoicePeru.Servicio.ApiSunatDto
 {
     public class ValidacionRequest
     {
-        [JsonProperty(PropertyName = "numRuc")]
+        [JsonPropertyName("numRuc")]
         public string RucEmisor { get; set; }
         
-        [JsonProperty(PropertyName = "codComp")]
+        [JsonPropertyName("codComp")]
         public string CodigoComprobante { get; set; }
         
-        [JsonProperty(PropertyName="numeroSerie")]
+        [JsonPropertyName("numeroSerie")]
         public string NumeroSerie { get; set; }
         
-        [JsonProperty(PropertyName = "numero")]
+        [JsonPropertyName("numero")]
         public int Numero { get; set; }
 
-        [JsonProperty(PropertyName = "fechaEmision")]
+        [JsonPropertyName("fechaEmision")]
         public string FechaEmision { get; set; }
 
-        [JsonProperty(PropertyName = "monto")]
+        [JsonPropertyName("monto")]
         public decimal Monto { get; set; }
     }
 }

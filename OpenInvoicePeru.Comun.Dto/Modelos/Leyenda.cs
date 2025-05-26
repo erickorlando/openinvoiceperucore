@@ -1,13 +1,13 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace OpenInvoicePeru.Comun.Dto.Modelos
 {
     public class Leyenda
     {
-        [JsonProperty(Required = Required.Always)]
-        public string Codigo { get; set; }
+        [JsonPropertyName("Codigo")]
+        public required string Codigo { get; set; }
 
-        [JsonProperty(Required = Required.Always)]
-        public string Descripcion { get; set; }
+        [JsonPropertyName("Descripcion")]
+        public required string Descripcion { get; set; }
     }
 }

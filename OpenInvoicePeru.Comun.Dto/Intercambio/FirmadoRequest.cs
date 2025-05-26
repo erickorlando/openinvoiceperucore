@@ -1,19 +1,19 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace OpenInvoicePeru.Comun.Dto.Intercambio
 {
     public class FirmadoRequest
     {
-        [JsonProperty(Required = Required.Always)]
+        [JsonPropertyName("CertificadoDigital")]
         public string CertificadoDigital { get; set; }
 
-        [JsonProperty(Required = Required.Always)]
+        [JsonPropertyName("PasswordCertificado")]
         public string PasswordCertificado { get; set; }
 
-        [JsonProperty(Required = Required.Always)]
+        [JsonPropertyName("TramaXmlSinFirma")]
         public string TramaXmlSinFirma { get; set; }
 
-        [JsonProperty(Required = Required.AllowNull)]
+        [JsonPropertyName("ValoresQr")]
         public string ValoresQr { get; set; }
     }
 }

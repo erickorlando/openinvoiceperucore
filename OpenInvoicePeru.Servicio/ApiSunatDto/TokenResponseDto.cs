@@ -1,16 +1,16 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace OpenInvoicePeru.Servicio.ApiSunatDto
 {
     public class TokenResponseDto
     {
-        [JsonProperty(PropertyName = "access_token")]
+        [JsonPropertyName("access_token")]
         public string AccessToken { get; set; }
 
-        [JsonProperty(PropertyName = "token_type")]
+        [JsonPropertyName("token_type")]
         public string TokenType { get; set; }
 
-        [JsonProperty(PropertyName = "expires_in")]
+        [JsonPropertyName("expires_in")]
         public int Expires { get; set; }
     }
 }

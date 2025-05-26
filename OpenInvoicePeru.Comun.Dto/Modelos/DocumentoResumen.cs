@@ -1,21 +1,20 @@
-﻿using Newtonsoft.Json;
-
+﻿using System.Text.Json.Serialization;
 using OpenInvoicePeru.Comun.Dto.Contratos;
 
 namespace OpenInvoicePeru.Comun.Dto.Modelos
 {
     public abstract class DocumentoResumen : IDocumentoElectronico
     {
-        [JsonProperty(Required = Required.Always)]
-        public string IdDocumento { get; set; }
+        [JsonPropertyName("IdDocumento")]
+        public required string IdDocumento { get; set; }
 
-        [JsonProperty(Required = Required.Always)]
-        public string FechaEmision { get; set; }
+        [JsonPropertyName("FechaEmision")]
+        public required string FechaEmision { get; set; }
 
-        [JsonProperty(Required = Required.Always)]
-        public string FechaReferencia { get; set; }
+        [JsonPropertyName("FechaReferencia")]
+        public required string FechaReferencia { get; set; }
 
-        [JsonProperty(Required = Required.Always)]
-        public Contribuyente Emisor { get; set; }
+        [JsonPropertyName("Emisor")]
+        public required Contribuyente Emisor { get; set; }
     }
 }

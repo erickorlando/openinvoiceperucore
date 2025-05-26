@@ -1,5 +1,5 @@
 ﻿using System;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 using OpenInvoicePeru.Comun.Dto.Contratos;
 using System.Collections.Generic;
 
@@ -8,31 +8,31 @@ namespace OpenInvoicePeru.Comun.Dto.Modelos
     public class DocumentoElectronico : IDocumentoElectronico
     {
 
-        [JsonProperty(Required = Required.Always)]
-        public string IdDocumento { get; set; }
+        [JsonPropertyName("IdDocumento")]
+        public required string IdDocumento { get; set; }
 
-        [JsonProperty(Required = Required.Always)]
-        public string TipoDocumento { get; set; }
+        [JsonPropertyName("TipoDocumento")]
+        public required string TipoDocumento { get; set; } // Initialized in constructor, but marked as required for consistency
 
-        [JsonProperty(Required = Required.Always)]
-        public Compania Emisor { get; set; }
+        [JsonPropertyName("Emisor")]
+        public required Compania Emisor { get; set; } // Initialized in constructor
 
-        [JsonProperty(Required = Required.Always)]
-        public Compania Receptor { get; set; }
+        [JsonPropertyName("Receptor")]
+        public required Compania Receptor { get; set; } // Initialized in constructor
 
-        [JsonProperty(Required = Required.Always)]
-        public string FechaEmision { get; set; }
+        [JsonPropertyName("FechaEmision")]
+        public required string FechaEmision { get; set; } // Initialized in constructor
 
-        [JsonProperty(Required = Required.Always)]
-        public string HoraEmision { get; set; }
+        [JsonPropertyName("HoraEmision")]
+        public required string HoraEmision { get; set; } // Initialized in constructor
 
         public string FechaVencimiento { get; set; }
 
-        [JsonProperty(Required = Required.Always)]
-        public string Moneda { get; set; }
+        [JsonPropertyName("Moneda")]
+        public required string Moneda { get; set; } // Initialized in constructor
 
-        [JsonProperty(Required = Required.AllowNull)]
-        public string TipoOperacion { get; set; }
+        [JsonPropertyName("TipoOperacion")]
+        public string TipoOperacion { get; set; } // Initialized in constructor
 
         public decimal Gravadas { get; set; }
 
@@ -51,23 +51,23 @@ namespace OpenInvoicePeru.Comun.Dto.Modelos
         public decimal LineExtensionAmount { get; set; }
         public decimal TaxInclusiveAmount { get; set; }
 
-        [JsonProperty(Required = Required.Always)]
-        public List<DetalleDocumento> Items { get; set; }
+        [JsonPropertyName("Items")]
+        public required List<DetalleDocumento> Items { get; set; } // Initialized in constructor
 
-        [JsonProperty(Required = Required.Always)]
+        [JsonPropertyName("TotalVenta")]
         public decimal TotalVenta { get; set; }
 
-        [JsonProperty(Required = Required.AllowNull)]
+        [JsonPropertyName("Redondeo")]
         public decimal Redondeo { get; set; }
 
-        [JsonProperty(Required = Required.Always)]
+        [JsonPropertyName("TotalIgv")]
         public decimal TotalIgv { get; set; }
 
         public decimal TotalIsc { get; set; }
 
         public decimal TotalOtrosTributos { get; set; }
 
-        public decimal TasaImpuesto { get; set; }
+        public decimal TasaImpuesto { get; set; } // Initialized in constructor
 
         public string MontoEnLetras { get; set; }
 
@@ -87,23 +87,23 @@ namespace OpenInvoicePeru.Comun.Dto.Modelos
 
         public bool Credito { get; set; }
 
-        public List<DatoCredito> DatoCreditos { get; set; }
+        public List<DatoCredito> DatoCreditos { get; set; } // Initialized in constructor
 
-        public List<DatoAdicional> DatoAdicionales { get; set; }
+        public List<DatoAdicional> DatoAdicionales { get; set; } // Initialized in constructor
 
-        public List<Anticipo> Anticipos { get; set; }
+        public List<Anticipo> Anticipos { get; set; } // Initialized in constructor
 
-        public List<DocumentoRelacionado> Relacionados { get; set; }
+        public List<DocumentoRelacionado> Relacionados { get; set; } // Initialized in constructor
 
-        public List<DocumentoRelacionado> OtrosDocumentosRelacionados { get; set; }
+        public List<DocumentoRelacionado> OtrosDocumentosRelacionados { get; set; } // Initialized in constructor
 
-        public List<Discrepancia> Discrepancias { get; set; }
+        public List<Discrepancia> Discrepancias { get; set; } // Initialized in constructor
 
         public string NroOrdenCompra { get; set; }
 
         public string Notas { get; set; }
 
-        public List<Leyenda> Leyendas { get; set; }
+        public List<Leyenda> Leyendas { get; set; } // Initialized in constructor
 
         public decimal OtrosCargos { get; set; }
 
@@ -111,11 +111,17 @@ namespace OpenInvoicePeru.Comun.Dto.Modelos
         {
             Emisor = new Compania
             {
-                TipoDocumento = "6" // RUC.
+                TipoDocumento = "6", // RUC.
+                NroDocumento = string.Empty, // Initialize required member
+                NombreLegal = string.Empty,  // Initialize required member
+                CodigoAnexo = "0000"       // Initialize required member
             };
             Receptor = new Compania
             {
-                TipoDocumento = "6" // RUC.
+                TipoDocumento = "6", // RUC.
+                NroDocumento = string.Empty, // Initialize required member
+                NombreLegal = string.Empty,  // Initialize required member
+                CodigoAnexo = "0000"       // Initialize required member
             };
             Items = new List<DetalleDocumento>();
             DatoAdicionales = new List<DatoAdicional>();

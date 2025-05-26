@@ -1,26 +1,75 @@
-using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.OpenApi.Models;
+using OpenInvoicePeru.Firmado;
+using OpenInvoicePeru.Servicio;
+using OpenInvoicePeru.Servicio.Soap;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
-namespace OpenInvoicePeru.WebApi
+var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container.
+builder.Services.AddTransient<ICertificador, Certificador>();
+builder.Services.AddTransient<ISerializador, Serializador>();
+builder.Services.AddTransient<IValidezComprobanteHelper, ValidezComprobanteHelper>();
+
+builder.Services.AddScoped<IServicioSunatDocumentos, ServicioSunatDocumentos>();
+builder.Services.AddScoped<IServicioSunatConsultas, ServicioSunatConsultas>();
+
+const string corsConfiguration = "OpenInvoicePeru";
+
+builder.Services.AddCors(setup =>
 {
-    public class Program
+    setup.AddPolicy(corsConfiguration, policyBuilder =>
     {
-        public static void Main(string[] args)
-        {
-            CreateHostBuilder(args).Build().Run();
-        }
+        policyBuilder.AllowAnyOrigin()
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                });
-    }
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.PropertyNameCaseInsensitive = true;
+        options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
+        // options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
+        // options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+    });
+
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "OpenInvoicePeru API REST NET 9", Version = "v1" });
+});
+
+var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
+    app.UseSwagger();
+    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "OpenInvoicePeru.WebApi v1"));
 }
+else
+{
+    // In production, you might want to configure a different Swagger UI endpoint or leave it out.
+    // For this example, we'll keep it similar to the original Startup.cs for non-development.
+    app.UseSwagger();
+    app.UseSwaggerUI(c => c.SwaggerEndpoint("../swagger/v1/swagger.json", "OpenInvoicePeru.WebApi v1"));
+}
+
+app.UseHttpsRedirection();
+
+app.UseRouting();
+
+app.UseAuthorization();
+
+app.UseCors(corsConfiguration);
+
+app.MapControllers();
+
+app.Run();

@@ -1,25 +1,25 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace OpenInvoicePeru.Comun.Dto.Modelos
 {
     public class DatoAdicional
     {
-        [JsonProperty(Order = 1, Required = Required.Always)]
-        public string Codigo { get; set; }
+        [JsonPropertyOrder(1)]
+        public required string Codigo { get; set; }
 
-        [JsonProperty(Order = 2, Required = Required.AllowNull)]
+        [JsonPropertyOrder(2)]
         public string Nombre { get; set; }
 
-        [JsonProperty(Order = 3, Required = Required.Always)]
-        public string Contenido { get; set; }
+        [JsonPropertyOrder(3)]
+        public required string Contenido { get; set; }
 
-        [JsonProperty(Order = 4, Required = Required.AllowNull)]
+        [JsonPropertyOrder(4)]
         public string FechaInicio { get; set; }
 
-        [JsonProperty(Order = 5, Required = Required.AllowNull)]
+        [JsonPropertyOrder(5)]
         public string FechaFin { get; set; }
 
-        [JsonProperty(Order = 6, Required = Required.AllowNull)]
+        [JsonPropertyOrder(6)]
         public int Duracion { get; set; }
     }
 }

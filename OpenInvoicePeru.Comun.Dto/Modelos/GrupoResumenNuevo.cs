@@ -1,20 +1,20 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace OpenInvoicePeru.Comun.Dto.Modelos
 {
     public class GrupoResumenNuevo : GrupoResumen
     {
-        [JsonProperty(Required = Required.Always)]
-        public string IdDocumento { get; set; }
+        [JsonPropertyName("IdDocumento")]
+        public required string IdDocumento { get; set; }
 
-        [JsonProperty(Required = Required.Always)]
-        public string TipoDocumentoReceptor { get; set; }
+        [JsonPropertyName("TipoDocumentoReceptor")]
+        public required string TipoDocumentoReceptor { get; set; }
 
-        [JsonProperty(Required = Required.Always)]
-        public string NroDocumentoReceptor { get; set; }
+        [JsonPropertyName("NroDocumentoReceptor")]
+        public required string NroDocumentoReceptor { get; set; }
 
-        [JsonProperty(Required = Required.Always)]
-        public int CodigoEstadoItem { get; set; }
+        [JsonPropertyName("CodigoEstadoItem")]
+        public required int CodigoEstadoItem { get; set; }
 
         public string DocumentoRelacionado { get; set; }
 
