@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace OpenInvoicePeru.Servicio.ApiSunatDto
 {
@@ -12,16 +12,16 @@ namespace OpenInvoicePeru.Servicio.ApiSunatDto
 
     public class Data
     {
-        [JsonProperty(PropertyName = "estadoCp")]
+        [JsonPropertyName("estadoCp")]
         public string EstadoComprobante { get; set; }
 
-        [JsonProperty(PropertyName = "estadoRuc")]
+        [JsonPropertyName("estadoRuc")]
         public string EstadoRuc { get; set; }
 
-        [JsonProperty(PropertyName = "condDomiRuc")]
+        [JsonPropertyName("condDomiRuc")]
         public string CondicionDomicilio { get; set; }
 
-        [JsonProperty(PropertyName = "observaciones")]
+        [JsonPropertyName("observaciones")]
         public ICollection<string> Observaciones { get; set; }
     }
 }

@@ -1,13 +1,13 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace OpenInvoicePeru.Comun.Dto.Intercambio
 {
     public class ConsultaConstanciaRequest : EnvioDocumentoComun
     {
-        [JsonProperty(Required = Required.Always)]
+        [JsonPropertyName("Serie")]
         public string Serie { get; set; }
 
-        [JsonProperty(Required = Required.Always)]
+        [JsonPropertyName("Numero")]
         public int Numero { get; set; }
     }
 }

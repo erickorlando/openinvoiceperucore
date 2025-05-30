@@ -1,7 +1,6 @@
 ![](openinvoiceperulogo.png)
-# OpenInvoicePeru v4.0 #
-OpenInvoicePeru es un API REST multiplataforma construido con C#, haciendo sencilla la Facturación Electrónica de SUNAT, este proyecto está orientado al desarrollador.
-Permite la generacion de XML, empaquetado, envío y recepción de documentos electrónicos a través de una API REST.
+# OpenInvoicePeru v5.0 #
+OpenInvoicePeru es un API REST multiplataforma construido con C#, actualizado a .NET 9, que simplifica la Facturación Electrónica de SUNAT. Este proyecto está orientado al desarrollador y facilita la generación de XML, empaquetado, envío y recepción de documentos electrónicos a través de una API REST.
 
 Si encuentra algún bug por favor reportarlo a la zona de [Issues](https://github.com/erickorlando/openinvoiceperucore/issues).
 
@@ -29,9 +28,11 @@ Para consultar las novedades y cambios del proyecto revise el [Control de Cambio
 - Ejemplos en C# para el consumo de la API REST con PostSharp.
 
 ## Consideraciones ##
-- El proyecto se ha desarrollado con VS2019 Version 16.11.4, usando como base .NET 5.
-- Se recomienda usar encarecidamente VS2019 o superior, la edición [Community Edition](https://www.visualstudio.com/downloads/download-visual-studio-vs), es gratis y mucho mejor que sus predecesores.
-Puede usar la versión Professional o Enterprise si lo desea.
+- El proyecto ha sido actualizado a .NET 9 y se ha desarrollado utilizando Visual Studio 2022.
+- Se recomienda encarecidamente usar VS2022 o superior. La [Community Edition](https://visualstudio.microsoft.com/vs/community/) es gratuita.
+- El proyecto `OpenInvoicePeru.WebApi` ha sido actualizado para utilizar el modelo de hosting minimalista introducido en .NET 6, consolidando la configuración de `Startup.cs` en `Program.cs`.
+- Se ha migrado la serialización JSON de `Newtonsoft.Json` a `System.Text.Json` como parte de la modernización y para mejorar el rendimiento.
+- La documentación de la API ahora está disponible no solo a través de SwaggerUI sino también mediante Scalar, accesible en la ruta `/scalar` de la WebApi.
 
 ## Descargo de Responsabilidad ##
 

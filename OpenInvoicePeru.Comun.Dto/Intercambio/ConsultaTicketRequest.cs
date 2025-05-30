@@ -1,10 +1,10 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace OpenInvoicePeru.Comun.Dto.Intercambio
 {
     public class ConsultaTicketRequest : EnvioDocumentoComun
     {
-        [JsonProperty(Required = Required.Always)]
+        [JsonPropertyName("NroTicket")]
         public string NroTicket { get; set; }
     }
 }

@@ -1,10 +1,10 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace OpenInvoicePeru.Comun.Dto.Intercambio
 {
     public class EnviarDocumentoRequest : EnvioDocumentoComun
     {
-        [JsonProperty(Required = Required.Always)]
+        [JsonPropertyName("TramaXmlFirmado")]
         public string TramaXmlFirmado { get; set; }
 
     }

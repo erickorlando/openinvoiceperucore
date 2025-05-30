@@ -1,23 +1,23 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace OpenInvoicePeru.Comun.Dto.Modelos
 {
     public class DetalleGuia
     {
-        [JsonProperty(Required = Required.Always)]
-        public int Correlativo { get; set; }
+        [JsonPropertyName("Correlativo")]
+        public required int Correlativo { get; set; }
 
-        [JsonProperty(Required = Required.Always)]
-        public string CodigoItem { get; set; }
+        [JsonPropertyName("CodigoItem")]
+        public required string CodigoItem { get; set; }
 
-        [JsonProperty(Required = Required.Always)]
-        public string Descripcion { get; set; }
+        [JsonPropertyName("Descripcion")]
+        public required string Descripcion { get; set; }
 
-        [JsonProperty(Required = Required.Always)]
-        public string UnidadMedida { get; set; }
+        [JsonPropertyName("UnidadMedida")]
+        public required string UnidadMedida { get; set; }
 
-        [JsonProperty(Required = Required.Always)]
-        public decimal Cantidad { get; set; }
+        [JsonPropertyName("Cantidad")]
+        public required decimal Cantidad { get; set; }
 
         public int LineaReferencia { get; set; }
     }

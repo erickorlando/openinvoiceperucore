@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace OpenInvoicePeru.Comun.Dto.Modelos
 {
@@ -8,16 +8,16 @@ namespace OpenInvoicePeru.Comun.Dto.Modelos
 
         public int CorrelativoFin { get; set; }
 
-        [JsonProperty(Required = Required.Always)]
-        public string Moneda { get; set; }
+        [JsonPropertyName("Moneda")]
+        public required string Moneda { get; set; }
 
-        [JsonProperty(Required = Required.Always)]
-        public decimal TotalVenta { get; set; }
+        [JsonPropertyName("TotalVenta")]
+        public required decimal TotalVenta { get; set; }
 
         public decimal TotalDescuentos { get; set; }
 
-        [JsonProperty(Required = Required.Always)]
-        public decimal TotalIgv { get; set; }
+        [JsonPropertyName("TotalIgv")]
+        public required decimal TotalIgv { get; set; }
 
         public decimal TotalIsc { get; set; }
 

@@ -1,11 +1,10 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace OpenInvoicePeru.Comun.Dto.Modelos
 {
     public class Compania : Contribuyente
     {
-        [JsonProperty(Order = 5)]
-        [JsonRequired]
-        public string CodigoAnexo { get; set; }
+        [JsonPropertyOrder(5)]
+        public required string CodigoAnexo { get; set; }
     }
 }

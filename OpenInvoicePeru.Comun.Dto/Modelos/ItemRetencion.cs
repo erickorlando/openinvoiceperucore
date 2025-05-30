@@ -1,16 +1,19 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace OpenInvoicePeru.Comun.Dto.Modelos
 {
     public class ItemRetencion : ItemSunatBase
     {
-        [JsonProperty(Order = 8, Required = Required.Always)]
-        public decimal ImporteSinRetencion { get; set; }
+        [JsonPropertyOrder(8)]
+        [JsonPropertyName("ImporteSinRetencion")]
+        public required decimal ImporteSinRetencion { get; set; }
 
-        [JsonProperty(Order = 10, Required = Required.Always)]
-        public decimal ImporteRetenido { get; set; }
+        [JsonPropertyOrder(10)]
+        [JsonPropertyName("ImporteRetenido")]
+        public required decimal ImporteRetenido { get; set; }
 
-        [JsonProperty(Order = 11, Required = Required.Always)]
-        public string FechaRetencion { get; set; }
+        [JsonPropertyOrder(11)]
+        [JsonPropertyName("FechaRetencion")]
+        public required string FechaRetencion { get; set; }
     }
 }

@@ -1,25 +1,31 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace OpenInvoicePeru.Comun.Dto.Modelos
 {
     public class Negocio : Contribuyente
     {
-        [JsonProperty(Order = 6)]
+        [JsonPropertyOrder(6)]
+        [JsonPropertyName("Ubigeo")]
         public string Ubigeo { get; set; }
 
-        [JsonProperty(Order = 7)]
+        [JsonPropertyOrder(7)]
+        [JsonPropertyName("Direccion")]
         public string Direccion { get; set; }
 
-        [JsonProperty(Order = 8)]
+        [JsonPropertyOrder(8)]
+        [JsonPropertyName("Urbanizacion")]
         public string Urbanizacion { get; set; }
 
-        [JsonProperty(Order = 9)]
+        [JsonPropertyOrder(9)]
+        [JsonPropertyName("Departamento")]
         public string Departamento { get; set; }
 
-        [JsonProperty(Order = 10)]
+        [JsonPropertyOrder(10)]
+        [JsonPropertyName("Provincia")]
         public string Provincia { get; set; }
 
-        [JsonProperty(Order = 11)]
+        [JsonPropertyOrder(11)]
+        [JsonPropertyName("Distrito")]
         public string Distrito { get; set; }
     }
 }
